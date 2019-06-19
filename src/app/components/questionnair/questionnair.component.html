@@ -1,3 +1,15 @@
-<p>
-  questionnair works!
-</p>
+<div class="main-questionnair container">
+  <div *ngIf="allQuestionnair" class="row">
+      <div class="Questionnair-item col-xs-12" *ngFor="let question of allQuestionnair.questions ; let i= index">
+
+        <div class="quetionType" *ngIf="activeQuestionNumber === i">
+
+          <app-free-text [Questionnair]="question" (newItemEvent)="questionChanged($event)" *ngIf="question.question_type == 'text'"></app-free-text>
+          <app-single-choice [Questionnair]="question" (newItemEvent)="questionChanged($event)" *ngIf="question.question_type == 'single-choice'"></app-single-choice>
+          <app-multi-choice [Questionnair]="question" (newItemEvent)="questionChanged($event)" *ngIf="question.question_type == 'multiple-choice'"></app-multi-choice>
+
+        </div>
+        
+      </div>
+  </div>
+</div>

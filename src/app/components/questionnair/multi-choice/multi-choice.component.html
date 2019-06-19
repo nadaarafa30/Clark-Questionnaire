@@ -1,3 +1,32 @@
-<p>
-  multi-choice works!
-</p>
+<div class="questionnait-Item freeText">
+    <div class="question">
+       {{Questionnair?.headline}}
+    </div>
+    <div class="answer">       
+        <div class="wrapper">
+          <div class="topics-tab-topics-section">
+            <div class="keyword-list">
+              <div class="keyword-list-item showing-bar" *ngFor="let select of Questionnair?.choices ; let i= index">
+                <div class="checkbox-wrapper">
+                    <input 
+                    class="checkbox-input"
+                    type="checkbox"
+                    [checked]="select.selected"
+                    (change)="select.selected = !select.selected; getValue()"
+                    value="{{select.value}}"
+                    id="{{Questionnair.identifier}}{{i}}"/>
+
+                    <label for="{{Questionnair.identifier}}{{i}}"></label>
+                </div>
+                <div class="keyword-list-item-phrase-wrapper">
+                  <span class="keyword-list-item-phrase">{{select.label}}</span>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  
+  </div>
+  

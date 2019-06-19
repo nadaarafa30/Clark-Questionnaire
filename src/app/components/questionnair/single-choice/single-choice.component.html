@@ -1,3 +1,24 @@
-<p>
-  single-choice works!
-</p>
+<div class="questionnait-Item freeText">
+    <div class="question">
+       {{Questionnair?.headline}}
+    </div>
+    <div class="answer">       
+        <div class="wrapper">
+          <div class="topics-tab-topics-section">
+            <div class="keyword-list">
+              <div class="keyword-list-item showing-bar">
+                  <select (change)="selectedValue($event.target.value)">
+                      <option value="0">--Select--</option>
+                      <option *ngFor="let select of Questionnair?.choices" value={{select.value}}>
+                          {{select.label}}
+                      </option>
+                  </select>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  
+  </div>
+  

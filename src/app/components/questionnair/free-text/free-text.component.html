@@ -1,3 +1,9 @@
-<p>
-  free-text works!
-</p>
+<div class="questionnait-Item freeText">
+  <div class="question">
+     {{Questionnair?.headline}}
+  </div>
+  <div class="answer">
+    <textarea name="Answer" #answer (keyup)="onKey(answer.value)"></textarea>
+  </div>
+
+</div>

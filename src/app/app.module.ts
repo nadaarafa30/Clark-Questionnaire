@@ -8,7 +8,7 @@ import { QuestionnairComponent } from './components/questionnair/questionnair.co
 import { FreeTextComponent } from './components/questionnair/free-text/free-text.component';
 import { MultiChoiceComponent } from './components/questionnair/multi-choice/multi-choice.component';
 import { SingleChoiceComponent } from './components/questionnair/single-choice/single-choice.component';
-
+import { HttpClientModule }    from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +20,8 @@ import { SingleChoiceComponent } from './components/questionnair/single-choice/s
   ],
   imports: [
     BrowserModule,
-    RoutingModule
+    RoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

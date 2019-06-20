@@ -41,12 +41,12 @@
         "jumps": []
       },
       {
-        "question_type": "single-choice",
+        "question_type": "multiple-choice",
         "identifier": "list_12111610",
         "headline": "Bist Du Beamter oder im öffentlichen Dienst angestellt?",
         "description": null,
-        "required": false,
-        "multiple": "false",
+        "required": true,
+        "multiple": "true",
         "choices": [
           {
             "label": "Ja",
@@ -67,7 +67,7 @@
         "headline": "Möchtest Du eine Forderungsausfalldeckung absichern?",
         "description": null,
         "required": false,
-        "multiple": "false",
+        "multiple": "true",
         "choices": [
           {
             "label": "Ja",

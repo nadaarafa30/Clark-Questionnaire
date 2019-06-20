@@ -9,6 +9,8 @@ import { FreeTextComponent } from './components/questionnair/free-text/free-text
 import { MultiChoiceComponent } from './components/questionnair/multi-choice/multi-choice.component';
 import { SingleChoiceComponent } from './components/questionnair/single-choice/single-choice.component';
 import { HttpClientModule }    from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,12 +18,14 @@ import { HttpClientModule }    from '@angular/common/http';
     QuestionnairComponent,
     FreeTextComponent,
     MultiChoiceComponent,
-    SingleChoiceComponent
+    SingleChoiceComponent,
+    
   ],
   imports: [
     BrowserModule,
     RoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

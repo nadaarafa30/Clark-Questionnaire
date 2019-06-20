@@ -1,0 +1,51 @@
+.main-questionnair{
+    .progressTxt{
+        display: block;
+        color: white;    
+    }
+    .progress{
+        height: 7px;
+    }
+    .quetionType{
+        margin-bottom: 70px;
+         @media screen and (max-width:992px) {
+            margin-bottom: 20px;
+         }
+    }
+    
+    .ActionBtns{
+        width:  100%;
+        height: 70px;
+        @media screen and (max-width:992px) {
+            height: 50px;
+        }
+        .btn {
+            width: 100px;   
+            cursor: pointer;
+
+            &.prev{
+                 float: left;
+            }
+            &.next{
+                 float: right;
+            }
+            &.submit{
+                float: right;
+                background-color: #5b8fde;
+                border-color: #5b8fde;
+            }
+            .fa{
+                margin: 2px;
+                font-size: 12px;
+            }
+
+            &:active {
+                outline:none;
+            }
+            &:focus{
+                outline:none;                
+            }
+    
+        }
+    }
+}

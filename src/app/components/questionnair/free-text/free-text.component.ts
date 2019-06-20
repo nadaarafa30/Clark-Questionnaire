@@ -1,4 +1,5 @@
 import { Component, OnInit , Input , Output , EventEmitter} from '@angular/core';
+import { AnswersService } from 'src/app/services/answers.service';
 
 @Component({
   selector: 'app-free-text',
@@ -8,21 +9,45 @@ import { Component, OnInit , Input , Output , EventEmitter} from '@angular/core'
 export class FreeTextComponent implements OnInit {
    @Input() Questionnair;
    @Output() newItemEvent = new EventEmitter<string>();
-   values = '';
+   objectToEmit;
+   value='';
    
-  constructor() { }
+   
+  constructor(private AnswersService:AnswersService) { }
 
   ngOnInit() {
+    if(this.AnswersService.getAllAnswers().length > 0 && this.AnswersService.getAnswerById(this.Questionnair.index) != undefined){
+      this.value= this.AnswersService.getAnswerById(this.Questionnair.index).answer;      
+    }
   }
 
   onKey(value: string) {
-    this.values = value ;
+    this.value=value;
+    this.objectToEmit={
+      'question_id':this.Questionnair.question.identifier,
+      'index':this.Questionnair.index,
+      'valid':this.checkValide(this.value),
+      'answer': this.value,
+    }
     this.AnsweredQuestion();
   }
 
-  AnsweredQuestion(){
-    this.newItemEvent.emit(this.values);
-  }
 
+  AnsweredQuestion(){
+    if (this.checkValide(this.value)){
+      this.newItemEvent.emit(this.objectToEmit);      
+    }
+    else{
+      this.AnswersService.editAnswer(this.Questionnair.index,undefined);    
+    }
+  }
+  checkValide(value){
+    if(value.length > 0){
+      return true;
+    }
+    else{      
+      return false;
+    }
+  }
 
 }

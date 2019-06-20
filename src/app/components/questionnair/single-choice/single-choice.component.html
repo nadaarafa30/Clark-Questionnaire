@@ -1,24 +1,27 @@
 <div class="questionnait-Item freeText">
-    <div class="question">
-       {{Questionnair?.headline}}
-    </div>
-    <div class="answer">       
-        <div class="wrapper">
-          <div class="topics-tab-topics-section">
-            <div class="keyword-list">
-              <div class="keyword-list-item showing-bar">
-                  <select (change)="selectedValue($event.target.value)">
-                      <option value="0">--Select--</option>
-                      <option *ngFor="let select of Questionnair?.choices" value={{select.value}}>
-                          {{select.label}}
-                      </option>
-                  </select>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
+  <div class="slide">
+      <div class="question">
+          {{Questionnair?.index + 1}}.{{Questionnair?.question.headline}}
+       </div>
+       <div class="answer">       
+           <div class="wrapper">       
+                     <div class="radios">
+                           <div class="radio" *ngFor="let select of Questionnair.question?.choices; let i=index">
+                             <input type="radio"  name="radio" [checked]="select.selected"
+                             (change)="select.selected = !select.selected; selectedValue();unselectAll(i)"
+                             value="{{select.value}}"
+                             id="{{Questionnair.question.identifier}}{{i}}">
+   
+                             <label for="{{Questionnair.question.identifier}}{{i}}">
+                               <div class="checker"></div>
+                               {{select.label}}
+                             </label>
+                           </div>
+                     </div>     
+           </div>
+       </div>
+  </div>
+ 
   
   </div>
   

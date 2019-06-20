@@ -1,9 +1,9 @@
 <div class="questionnait-Item freeText">
   <div class="question">
-     {{Questionnair?.headline}}
+     {{Questionnair?.index + 1}}.{{Questionnair?.question.headline}}
   </div>
   <div class="answer">
-    <textarea name="Answer" #answer (keyup)="onKey(answer.value)"></textarea>
+    <textarea name="Answer" #answer [(ngModel)]="value" (keyup)="onKey(answer.value)"></textarea>
   </div>
 
 </div>

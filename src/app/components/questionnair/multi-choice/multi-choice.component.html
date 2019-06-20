@@ -1,26 +1,37 @@
 <div class="questionnait-Item freeText">
     <div class="question">
-       {{Questionnair?.headline}}
+        {{Questionnair?.index + 1}}.{{Questionnair?.question.headline}}
     </div>
     <div class="answer">       
         <div class="wrapper">
           <div class="topics-tab-topics-section">
             <div class="keyword-list">
-              <div class="keyword-list-item showing-bar" *ngFor="let select of Questionnair?.choices ; let i= index">
+              <div class="keyword-list-item showing-bar" *ngFor="let select of Questionnair?.question.choices ; let i= index">
                 <div class="checkbox-wrapper">
                     <input 
-                    class="checkbox-input"
+                    class="inp-box" style="display:none"
                     type="checkbox"
                     [checked]="select.selected"
                     (change)="select.selected = !select.selected; getValue()"
                     value="{{select.value}}"
-                    id="{{Questionnair.identifier}}{{i}}"/>
+                    id="{{Questionnair.question.identifier}}{{i}}"/>
+                    <span class="check"></span>
+                    
 
-                    <label for="{{Questionnair.identifier}}{{i}}"></label>
+                    <label for="{{Questionnair.question.identifier}}{{i}}" class="ctx" [ngClass]="{'CheckedItem': select.selected}">
+                        <span>
+                          <svg width="12px" height="10px">
+                            <use xlink:href="#check">
+                              <symbol id="check" viewBox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                              </symbol>
+                            </use>
+                          </svg>
+                        </span>
+                        <span>{{select.label}}</span>
+                      </label>
                 </div>
-                <div class="keyword-list-item-phrase-wrapper">
-                  <span class="keyword-list-item-phrase">{{select.label}}</span>
-                </div>
+          
                 
               </div>
             </div>

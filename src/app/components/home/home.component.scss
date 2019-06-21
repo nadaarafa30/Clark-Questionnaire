@@ -1,0 +1,63 @@
+.home{
+    .ico{
+        position: absolute;
+        width: 250px;
+        margin-top: 10px;
+        left: 200px;
+        top: -30px;
+        
+        @media screen and (max-width:1210px) {            
+            position: absolute;
+            width: 204px;
+            margin-top: 10px;
+            left: 13px;
+            top: -34px;
+        }
+        @media screen and (max-width:520px) {            
+        width: 160px;
+        margin-top: 10px;
+        left: 0px;
+        top: -52px;
+        }
+    }
+    .mt-20{
+        margin-top: 70px;
+    }
+    .details{
+        margin: auto;
+        padding: 130px 20%;
+        text-align: center;
+        @media screen and (max-width:520px) {
+            margin: auto;
+            padding: 115px 10px;
+        }
+
+        h1{
+            font-size: 90px;   
+            @media screen and (max-width:520px) {            
+                font-size: 70px;       
+            }                
+        }
+        p{
+            font-size: 38px;
+            @media screen and (max-width:520px) {            
+                font-size: 28px;       
+            }    
+        }
+        a{
+            background-color: #4fb0ae;
+            padding: 20px 60px;
+            display: inline-block;
+            border-radius: 5px;
+            font-size: 25px;
+            color: white;
+            font-weight: bold;
+            margin-top: 25px;
+            text-decoration: none;
+            cursor: pointer !important;
+            @media screen and (max-width:520px) {            
+            padding: 12px 60px;
+            }
+        }
+    }
+}

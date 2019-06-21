@@ -67,7 +67,7 @@
         "headline": "Möchtest Du eine Forderungsausfalldeckung absichern?",
         "description": null,
         "required": false,
-        "multiple": "true",
+        "multiple": "false",
         "choices": [
           {
             "label": "Ja",

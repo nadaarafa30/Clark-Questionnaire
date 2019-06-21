@@ -26,6 +26,7 @@ export class SingleChoiceComponent implements OnInit {
 
   selectedValue(){
     this.objectToEmit={
+      'question_type':'singleChoice',
       'question_id':this.Questionnair.question.identifier,
       'index':this.Questionnair.index,
       'valid':this.checkValide(this.Questionnair.question.choices),

@@ -33,7 +33,11 @@ export class QuestionnairComponent implements OnInit {
   }
   questionChanged($event){
     this.AnswersService.addAnswer($event);
-   console.log(this.AnswersService.getAllAnswers());
+    if($event['question_type'] == 'singleChoice'){
+      setTimeout(() => {
+        this.next();        
+      }, 400);
+    }
   }
 
   gerPersentage(){  
@@ -58,7 +62,7 @@ export class QuestionnairComponent implements OnInit {
   Submit(){
     let realAnswer = Object.assign({},this.AnswersService.getAllAnswers());
     let total=(Object.keys(realAnswer).map(function(key) {return [Number(key), realAnswer[key]]}));
-    alert("You answered only " + total.length + " Question , Thanks For your Time");
+    alert("You answered " + total.length + " Question , Thanks For your Time");
     
   }
 

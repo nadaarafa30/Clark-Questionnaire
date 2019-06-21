@@ -24,6 +24,7 @@ export class FreeTextComponent implements OnInit {
   onKey(value: string) {
     this.value=value;
     this.objectToEmit={
+      'question_type':'text',      
       'question_id':this.Questionnair.question.identifier,
       'index':this.Questionnair.index,
       'valid':this.checkValide(this.value),
@@ -31,7 +32,7 @@ export class FreeTextComponent implements OnInit {
     }
     this.AnsweredQuestion();
   }
-
+  
 
   AnsweredQuestion(){
     if (this.checkValide(this.value)){

@@ -3,7 +3,7 @@
      {{Questionnair?.index + 1}}.{{Questionnair?.question.headline}}
   </div>
   <div class="answer">
-    <textarea name="Answer" #answer [(ngModel)]="value" (keyup)="onKey(answer.value)"></textarea>
+    <textarea name="Answer" *ngIf="Questionnair" #answer [(ngModel)]="value" (keyup)="onKey(answer.value)"></textarea>
   </div>
 
 </div>

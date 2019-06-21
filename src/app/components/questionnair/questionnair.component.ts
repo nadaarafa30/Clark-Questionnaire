@@ -30,6 +30,7 @@ export class QuestionnairComponent implements OnInit {
 
   ngOnDestroy(){
     this.subscribtion.unsubscribe();
+    this.AnswersService.reset();
   }
   questionChanged($event){
     this.AnswersService.addAnswer($event);

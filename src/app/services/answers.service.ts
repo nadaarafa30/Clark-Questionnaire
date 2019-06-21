@@ -20,6 +20,10 @@ export class AnswersService {
   editAnswer(index,value){
     this.Allanswers[index]=value;
   }
+  reset(){
+    this.Allanswers=[];
+    
+  }
 
 
 }

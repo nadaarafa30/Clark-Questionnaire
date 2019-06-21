@@ -3,10 +3,7 @@
         {{Questionnair?.index + 1}}.{{Questionnair?.question.headline}}
     </div>
     <div class="answer">       
-        <div class="wrapper">
-          <div class="topics-tab-topics-section">
-            <div class="keyword-list">
-              <div class="keyword-list-item showing-bar" *ngFor="let select of Questionnair?.question.choices ; let i= index">
+              <div class="wrapper" *ngFor="let select of Questionnair?.question.choices ; let i= index">
                 <div class="checkbox-wrapper">
                     <input 
                     class="inp-box" style="display:none"
@@ -17,7 +14,6 @@
                     id="{{Questionnair.question.identifier}}{{i}}"/>
                     <span class="check"></span>
                     
-
                     <label for="{{Questionnair.question.identifier}}{{i}}" class="ctx" [ngClass]="{'CheckedItem': select.selected}">
                         <span>
                           <svg width="12px" height="10px">
@@ -31,12 +27,7 @@
                         <span>{{select.label}}</span>
                       </label>
                 </div>
-          
-                
               </div>
-            </div>
-          </div>
-        </div>
     </div>
   
   </div>
